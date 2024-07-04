@@ -11,7 +11,8 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+import { navItems as existingNavItems } from "../App";
+import { Plus } from "lucide-react";
 
 const Layout = () => {
   return (
@@ -113,5 +114,14 @@ const SidebarNavLink = ({ to, children }) => (
     {children}
   </NavLink>
 );
+
+const navItems = [
+  ...existingNavItems,
+  {
+    title: "Add Post",
+    to: "/add-post",
+    icon: <Plus className="h-4 w-4" />,
+  },
+];
 
 export default Layout;
