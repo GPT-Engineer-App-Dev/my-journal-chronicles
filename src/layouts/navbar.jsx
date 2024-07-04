@@ -11,10 +11,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2, Plus } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+import { navItems as existingNavItems } from "../App";
 
 const navItems = [
-  // existing nav items
+  ...existingNavItems,
   {
     title: "Add Post",
     to: "/add-post",

@@ -9,9 +9,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Plus } from "lucide-react";
+import { CircleUser, Menu, Package2 } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+import { navItems as existingNavItems } from "../App";
+import { Plus } from "lucide-react";
 
 const Layout = () => {
   return (
@@ -115,7 +116,7 @@ const SidebarNavLink = ({ to, children }) => (
 );
 
 const navItems = [
-  // existing nav items
+  ...existingNavItems,
   {
     title: "Add Post",
     to: "/add-post",
